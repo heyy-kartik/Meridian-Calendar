@@ -10,7 +10,7 @@ interface Props {
 
 export default function HeroImage({ monthIndex, year }: Props) {
   return (
-    <div className="relative w-full lg:w-[42%] min-h-[240px] lg:min-h-full overflow-hidden flex-shrink-0 rounded-tl-2xl rounded-bl-2xl lg:rounded-tr-none rounded-tr-none rounded-br-none">
+    <div className="relative w-full lg:w-[42%] min-h-[240px] lg:min-h-full overflow-hidden flex-shrink-0 ">
       <AnimatePresence mode="wait">
         <motion.div
           key={monthIndex}
@@ -45,9 +45,15 @@ export default function HeroImage({ monthIndex, year }: Props) {
           className="absolute bottom-6 right-0 z-10"
         >
           <div className="bg-[#1A6FD8] px-5 pt-2 pb-3 clip-diagonal">
-            <p className="text-white/70 text-[10px] font-light tracking-[0.25em] uppercase">{year}</p>
-            <p className="text-white text-2xl lg:text-3xl font-bold tracking-wider uppercase leading-none"
-               style={{ fontFamily: 'var(--font-display, "Playfair Display", serif)' }}>
+            <p className="text-white/70 text-[10px] font-light tracking-[0.25em] uppercase">
+              {year}
+            </p>
+            <p
+              className="text-white text-2xl lg:text-3xl font-bold tracking-wider uppercase leading-none"
+              style={{
+                fontFamily: 'var(--font-display, "Playfair Display", serif)',
+              }}
+            >
               {MONTH_NAMES[monthIndex]}
             </p>
           </div>

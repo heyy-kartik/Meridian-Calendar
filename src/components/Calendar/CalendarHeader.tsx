@@ -17,9 +17,10 @@ export default function CalendarHeader({ onPrev, onNext }: Props) {
         {Array.from({ length: RING_COUNT }).map((_, i) => (
           <div
             key={i}
-            className="w-3 h-5 rounded-full border-2 border-[#9A9A9A]/40 bg-[#FAF8F3] shadow-sm"
+            className="w-3 h-5 border-2 border-[#9A9A9A]/40 bg-[#FAF8F3] shadow-sm"
             style={{
-              boxShadow: "inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.15)"
+              boxShadow:
+                "inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.15)",
             }}
           />
         ))}

@@ -32,7 +32,11 @@ export default function Calendar() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
+      if (
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLInputElement
+      )
+        return;
       if (e.key === "ArrowLeft") goToMonth("prev");
       if (e.key === "ArrowRight") goToMonth("next");
       if (e.key === "Escape") clearRange();
@@ -59,9 +63,10 @@ export default function Calendar() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="calendar-card relative w-full max-w-4xl bg-[#FAF8F3] rounded-2xl overflow-hidden animate-float"
+        className="calendar-card relative w-full max-w-4xl bg-[#FAF8F3] rounded-sm overflow-hidden animate-float"
         style={{
-          boxShadow: "0 24px 48px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.10)",
+          boxShadow:
+            "0 24px 48px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.10)",
         }}
         role="application"
         aria-label="Meridian Calendar"
@@ -74,7 +79,8 @@ export default function Calendar() {
                 key={i}
                 className="w-3 h-5 rounded-full border-2 border-[#9A9A9A]/35 bg-[#FAF8F3]"
                 style={{
-                  boxShadow: "inset 0 1px 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.12)",
+                  boxShadow:
+                    "inset 0 1px 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.12)",
                   transform: "translateY(-25%)",
                 }}
               />
@@ -102,7 +108,8 @@ export default function Calendar() {
                   className="flex items-center justify-between px-4 lg:px-6 py-2 bg-[#1A6FD8]/8 border-b border-[#1A6FD8]/15 overflow-hidden"
                 >
                   <span className="text-[10px] text-[#1A6FD8] font-semibold tracking-wide">
-                    {format(range.start!, "MMM d")} → {format(range.end!, "MMM d, yyyy")}
+                    {format(range.start!, "MMM d")} →{" "}
+                    {format(range.end!, "MMM d, yyyy")}
                   </span>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
